@@ -23,14 +23,11 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0.vendor:64 \
     android.hardware.bluetooth@1.1.vendor:64 \
     hardware.google.bluetooth.bt_channel_avoidance@1.0.vendor:64 \
-    hardware.google.bluetooth.ccc@1.0.vendor:64 \
     hardware.google.bluetooth.ccc@1.1.vendor:64 \
-    hardware.google.bluetooth.ewp@1.0.vendor:64 \
     hardware.google.bluetooth.ext@1.0.vendor:64 \
-    hardware.google.bluetooth.sar@1.0.vendor:64 \
+    hardware.google.bluetooth.ewp@1.0.vendor:64 \
     hardware.google.bluetooth.sar@1.1.vendor:64
 
 # Camera
@@ -48,22 +45,12 @@ PRODUCT_PACKAGES += \
 # Codec2
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.0.vendor \
-    android.hardware.media.c2@1.1.vendor:64 \
-    android.hardware.media.c2@1.2.vendor:64 \
-    libacryl \
-    libacryl_hdr_plugin \
-    libavservices_minijail.vendor \
+    libavservices_minijail.vendor:32 \
+    libavservices_minijail.vendor:64 \
     libcodec2_hidl@1.0.vendor \
-    libcodec2_hidl@1.1.vendor:64 \
-    libcodec2_hidl@1.2.vendor:64 \
-    libcodec2_soft_common.vendor:64 \
     libcodec2_vndk.vendor \
-    libexynosutils \
-    libexynosv4l2 \
     libmedia_ecoservice.vendor \
-    libsfplugin_ccodec_utils.vendor \
-    libstagefright_bufferpool@2.0.1.vendor \
-    libvendorgraphicbuffer
+    libstagefright_bufferpool@2.0.1.vendor
 
 # Confirmation UI
 PRODUCT_PACKAGES += \
@@ -86,8 +73,6 @@ PRODUCT_PACKAGES += \
 
 # Nos
 PRODUCT_PACKAGES += \
-    libkeymaster4support.vendor:64 \
-    libkeymint_support.vendor:64 \
     libnos:64 \
     libnosprotos:64 \
     libnos_client_citadel:64 \
@@ -97,17 +82,16 @@ PRODUCT_PACKAGES += \
     nos_app_avb:64 \
     nos_app_identity:64 \
     nos_app_keymaster:64 \
-    nos_app_weaver:64 \
-    pixelpowerstats_provider_aidl_interface-cpp.vendor:64
+    nos_app_weaver:64
 
-# Sensors
+# Telephony
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0.vendor \
-    android.hardware.sensors@2.0-ScopedWakelock.vendor \
-    android.hardware.sensors@2.0.vendor \
-    android.hardware.sensors@2.1.vendor \
-    libsensorndkbridge \
-    sensors.dynamic_sensor_hal
+    ImsServiceEntitlement \
+    Iwlan
+
+# Tinycompress
+PRODUCT_PACKAGES += \
+    libtinycompress
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
@@ -115,42 +99,52 @@ PRODUCT_PACKAGES += \
 
 # Misc interfaces
 PRODUCT_PACKAGES += \
-    android.frameworks.stats-V1-ndk.vendor:32 \
     android.hardware.authsecret@1.0.vendor:64 \
+    android.hardware.biometrics.common-V1-ndk_platform.vendor:64 \
     android.hardware.biometrics.common-V2-ndk.vendor:64 \
-    android.hardware.biometrics.face-V2-ndk.vendor:64 \
-    android.hardware.biometrics.face@1.0.vendor:64 \
+    android.hardware.biometrics.fingerprint-V1-ndk_platform.vendor:64 \
     android.hardware.biometrics.fingerprint-V2-ndk.vendor:64 \
+    android.hardware.input.classifier@1.0.vendor:64 \
+    android.hardware.input.common@1.0.vendor:64 \
     android.hardware.input.common-V1-ndk.vendor:64 \
     android.hardware.input.processor-V1-ndk.vendor:64 \
     android.hardware.keymaster@3.0.vendor:64 \
-    android.hardware.keymaster@4.0.vendor:64 \
     android.hardware.keymaster@4.1.vendor:64 \
+    android.hardware.neuralnetworks-V1-ndk_platform.vendor:64 \
     android.hardware.neuralnetworks-V4-ndk.vendor:64 \
     android.hardware.oemlock@1.0.vendor:64 \
-    android.hardware.power@1.0.vendor:64 \
-    android.hardware.power@1.1.vendor:64 \
     android.hardware.power@1.2.vendor:64 \
-    android.hardware.radio.config@1.0.vendor \
-    android.hardware.radio.config@1.1.vendor \
+    android.hardware.qorvo.uwb.service \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.radio@1.2.vendor \
-    android.hardware.radio@1.3.vendor \
-    android.hardware.radio@1.4.vendor \
-    android.hardware.radio@1.5.vendor \
     android.hardware.radio@1.6.vendor \
-    android.hardware.secure_element@1.0.vendor:32 \
-    android.hardware.secure_element@1.1.vendor:32 \
-    android.hardware.secure_element@1.2.vendor:32 \
-    android.hardware.thermal@1.0.vendor:32 \
-    android.hardware.thermal@2.0.vendor:32 \
+    android.hardware.sensors@2.0-ScopedWakelock.vendor \
+    android.hardware.sensors@2.1.vendor \
+    android.hardware.tetheroffload.config@1.0.vendor:64 \
+    android.hardware.tetheroffload.control@1.1.vendor:64 \
     android.hardware.weaver@1.0.vendor:64 \
-    android.hardware.wifi@1.1.vendor:64 \
-    android.hardware.wifi@1.2.vendor:64 \
-    android.hardware.wifi@1.3.vendor:64 \
-    android.hardware.wifi@1.4.vendor:64 \
-    android.hardware.wifi@1.5.vendor:64 \
     android.hardware.wifi@1.6.vendor:64 \
-    com.google.hardware.pixel.display-V4-ndk.vendor:64 \
-    com.google.hardware.pixel.display-V5-ndk.vendor
+    com.google.hardware.pixel.display-V4-ndk.vendor
+
+# Misc
+PRODUCT_PACKAGES += \
+    libGralloc4Wrapper \
+    libaudioroutev2.vendor \
+    libcamera2ndk_vendor \
+    libexynosutils \
+    libexynosv4l2 \
+    libsfplugin_ccodec_utils.vendor \
+    libkeymint_support.vendor:64 \
+    libcppbor.vendor:64 \
+    libkeymaster4support.vendor:64 \
+    libnetfilter_conntrack:64 \
+    libnfnetlink:64 \
+    libsensorndkbridge \
+    libtrusty_metrics:64 \
+    pixelpowerstats_provider_aidl_interface-cpp.vendor:64 \
+    sensors.dynamic_sensor_hal
+
+# Quick Tap
+TARGET_SUPPORTS_QUICK_TAP := true
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.columbus.use_ap_sensor=false
