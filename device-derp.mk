@@ -71,6 +71,9 @@ PRODUCT_PACKAGES += \
     android.hardware.confirmationui@1.0.vendor:64 \
     libteeui_hal_support.vendor:64
 
+# Fs-verity
+PRODUCT_PRODUCT_PROPERTIES += ro.apk_verity.mode=2
+
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport.vendor \
